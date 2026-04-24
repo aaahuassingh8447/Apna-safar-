@@ -1,0 +1,209 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apna Safar - Travel With Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Apna Safar</div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Explore India Like Never Before</h1>
+        <p>Best budget friendly tour packages for your dream travel.</p>
+        <a href="#destinations" class="btn">Book Your Trip</a>
+    </section>
+
+    <!-- Destinations -->
+
+<section id="destinations" class="destination-section">
+  <h2>Popular Destinations</h2>
+  <p class="subtext">Best budget-friendly India tours ✈️</p>
+
+  <div class="cards">
+
+    <a href="kashmir.html" class="card-link">
+      <div class="card">
+        <img src="kashmir.jpg" alt="">
+        <div class="card-body">
+          <h3>Kashmir</h3>
+          <p>Snow Paradise ❄️</p>
+          <span class="price">₹9,499</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="kerala.html" class="card-link">
+      <div class="card">
+        <img src="kerala.jpg" alt="">
+        <div class="card-body">
+          <h3>Kerala</h3>
+          <p>God’s Own Country 🌿</p>
+          <span class="price">₹11,999</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="varanasi.html" class="card-link">
+      <div class="card">
+        <img src="varanasi.jpg" alt="">
+        <div class="card-body">
+          <h3>Varanasi</h3>
+          <p>Spiritual Journey 🛶</p>
+          <span class="price">₹6,499</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="rishikesh.html" class="card-link">
+      <div class="card">
+        <img src="rishikesh.jpeg" alt="">
+        <div class="card-body">
+          <h3>Rishikesh</h3>
+          <p>Adventure Awaits ⛰️</p>
+          <span class="price">₹7,599</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="andaman.html" class="card-link">
+      <div class="card">
+        <img src="andaman.jpg" alt="">
+        <div class="card-body">
+          <h3>Andaman</h3>
+          <p>Tropical Heaven 🏝️</p>
+          <span class="price">₹19,999</span>
+        </div>
+      </div>
+    </a>
+
+    <a href="agra.html" class="card-link">
+      <div class="card">
+        <img src="agra.jpg" alt="">
+        <div class="card-body">
+          <h3>Agra</h3>
+          <p>Symbol of Love 🤍</p>
+          <span class="price">₹5,999</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+    <!-- Why Choose Us -->
+    <section class="why-us" id="about">
+        <h2>Why Choose Us?</h2>
+        <p class="subtext">Hum travel ko easy aur memorable banate hain ✨</p>
+
+        <div class="feature-boxes">
+
+            <div class="feature">
+                <img src="https://cdn-icons-png.flaticon.com/512/854/854866.png" alt="">
+                <h3>Affordable Packages</h3>
+                <p>Best budget friendly travel deals without compromising comfort.</p>
+            </div>
+
+            <div class="feature">
+                <img src="https://cdn-icons-png.flaticon.com/512/2331/2331970.png" alt="">
+                <h3>Trusted Guides</h3>
+                <p>Local & experienced guides for safe and fun journeys.</p>
+            </div>
+
+            <div class="feature">
+                <img src="https://cdn-icons-png.flaticon.com/512/1827/1827423.png" alt="">
+                <h3>24/7 Support</h3>
+                <p>Hum hamesha aapke saath — before, during, and after the trip.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Booking Form -->
+    <section class="booking" id="contact">
+        <h2>Book Your Trip</h2>
+        <p class="subtext">Apna safar yaha se start karein ✈️</p>
+
+        <form class="booking-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="text" placeholder="Phone / Email" required>
+
+            <select required>
+                <option value="" disabled selected>Select Destination</option>
+                <option>Kashmir</option>
+                <option>Kerala</option>
+                <option>Varanasi</option>
+                <option>Rishikesh</option>
+                <option>Andaman</option>
+                <option>Agra</option>
+            </select>
+
+            <div class="row">
+                <input type="date" required>
+                <input type="number" placeholder="No. of People" required>
+            </div>
+
+            <button type="submit" class="btn-submit">Submit</button>
+        </form>
+    </section>
+
+<script>
+document.querySelector(".booking-form").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  let name = document.querySelector("input[placeholder='Your Name']").value;
+  let contact = document.querySelector("input[placeholder='Phone / Email']").value;
+  let destination = document.querySelector("select").value;
+  let date = document.querySelector("input[type='date']").value;
+  let people = document.querySelector("input[placeholder='No. of People']").value;
+
+  let message = `Hello! I want to book a trip.%0AName: ${name}%0AContact: ${contact}%0ADestination: ${destination}%0ADate: ${date}%0ANo. of People: ${people}`;
+
+  window.open(`https://wa.me/918447049935?text=${message}`, "_blank");
+});
+</script>
+  <footer>
+  <div class="footer-content">
+    <h3>Apna Safar</h3>
+    <p>Travel India with comfort, culture, and unforgettable memories 🌏</p>
+
+    <div class="social-icons">
+
+      <!-- Instagram -->
+      <a href="https://instagram.com/01_aashu_xx" target="_blank">
+        <i class="fab fa-instagram"></i>
+      </a>
+
+      <!-- YouTube -->
+      <a href="https://youtube.com/@aashuvlog143" target="_blank">
+        <i class="fab fa-youtube"></i>
+      </a>
+
+      <!-- WhatsApp -->
+      <a href="https://wa.me/918447049935" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+
+    </div>
+  </div>
+
+  <p class="copyright">© 2025 Apna Safar. All Rights Reserved.</p>
+</footer>
+</body>
+</html>
